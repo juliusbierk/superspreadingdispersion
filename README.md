@@ -1,7 +1,7 @@
 # Estimation of superspreading dispersion
 
 This repository contains a simplified version of the code used in
-https://www.medrxiv.org/content/10.1101/2021.01.15.21249870v1.
+https://www.nature.com/articles/s41598-021-03126-w
 
 The code makes maximum likelihood estimates of the basic reproduction number *R0*
 and dispersion parameter *k* of simulated data (a simple simulation code is also included).
