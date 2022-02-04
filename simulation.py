@@ -56,10 +56,10 @@ def sim(r0, k, cross, T=100, start=1):
     all_times += discover_shift
     rand_days = len(x)
 
-    all_times_int = np.array(all_times, dtype=np.int)
+    all_times_int = np.array(all_times, dtype=int)
 
     t, c = np.unique(all_times_int, return_counts=True)
-    found = np.zeros(T + rand_days, dtype=np.int)
+    found = np.zeros(T + rand_days, dtype=int)
     found[t] = c
 
     return found[:(-rand_days if rand_days > 0 else None)]
