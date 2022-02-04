@@ -90,11 +90,11 @@ def _single_adapt_to_tests(t, test_arr, p_infect, p_discover, n_samples):
     n_infect = np.arange(ni)
     n_discover = np.arange(nd)
 
-    samples = np.zeros((len(test_arr), n_samples), dtype=np.int) - 100
+    samples = np.zeros((len(test_arr), n_samples), dtype=int) - 100
     _adapt_tests_loop(max_before, n_discover, n_infect, n_samples, nd, p_discover, p_infect, padded_test_arr,
                       samples, test_arr)
 
-    counts = np.zeros((samples.shape[0], len(t)), dtype=np.int)
+    counts = np.zeros((samples.shape[0], len(t)), dtype=int)
     _adapt_count(min(t), max(t), samples, counts)
 
     p = counts / counts.sum(axis=1)[:, None]
@@ -188,7 +188,7 @@ def main():
         data, r0_sim, k_sim, cross_sim = pickle.load(f)
 
     communes = [str(i) for i in range(len(data))]
-    case_arr = np.array(np.round(np.array(data, dtype=np.double)[:, :-2]), dtype=np.int)
+    case_arr = np.array(np.round(np.array(data, dtype=np.double)[:, :-2]), dtype=int)
     population = np.ones(len(communes))
 
     test_arr = None  # no test data for simulations
